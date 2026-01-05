@@ -6,10 +6,10 @@
     "location": "Localização",
     "contact": "Contato"
   },
-  "hero": {
+"hero": {
     "title": "Residência Contemporânea",
     "subtitle": "Uma obra arquitetônica única em localização privilegiada",
-    "cta": "Agendar Visita",
+    "cta": "Ligar para Agendar",
     "ctaSecondary": "Falar no WhatsApp"
   },
   "about": {
@@ -50,9 +50,9 @@
       ]
     }
   },
-  "contact": {
+"contact": {
     "title": "Interessado?",
-    "subtitle": "Entre em contato para agendar uma visita exclusiva",
+    "subtitle": "Ligue para agendar uma visita exclusiva",
     "form": {
       "name": "Nome",
       "email": "E-mail",
@@ -62,7 +62,7 @@
     },
     "whatsapp": "WhatsApp",
     "call": "Ligar Agora",
-    "schedule": "Agendar Visita"
+    "schedule": "Ligar para Agendar Visita"
   },
   "footer": {
     "rights": "Todos os direitos reservados"

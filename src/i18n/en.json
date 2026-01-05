@@ -6,10 +6,10 @@
     "location": "Location",
     "contact": "Contact"
   },
-  "hero": {
+"hero": {
     "title": "Contemporary Residence",
     "subtitle": "A unique architectural masterpiece in a prime location",
-    "cta": "Schedule Visit",
+    "cta": "Call to Schedule",
     "ctaSecondary": "Chat on WhatsApp"
   },
   "about": {
@@ -50,9 +50,9 @@
       ]
     }
   },
-  "contact": {
+"contact": {
     "title": "Interested?",
-    "subtitle": "Get in touch to schedule an exclusive visit",
+    "subtitle": "Call us to schedule an exclusive visit",
     "form": {
       "name": "Name",
       "email": "Email",
@@ -62,7 +62,7 @@
     },
     "whatsapp": "WhatsApp",
     "call": "Call Now",
-    "schedule": "Schedule Visit"
+    "schedule": "Call to Schedule Visit"
   },
   "footer": {
     "rights": "All rights reserved"

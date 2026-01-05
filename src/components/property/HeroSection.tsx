@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { propertyConfig } from '@/config/property';
-import { MessageCircle, Calendar } from 'lucide-react';
+import { MessageCircle, Phone } from 'lucide-react';
 
 const HeroSection: React.FC = () => {
   const { t } = useLanguage();
@@ -21,8 +21,8 @@ const HeroSection: React.FC = () => {
     window.open(`https://wa.me/${propertyConfig.whatsapp}?text=${message}`, '_blank');
   };
 
-  const scrollToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  const handleCall = () => {
+    window.open(`tel:${propertyConfig.phone.replace(/\s/g, '')}`, '_self');
   };
 
   const showVideo = propertyConfig.heroVideo && !isMobile;
@@ -74,8 +74,8 @@ const HeroSection: React.FC = () => {
             className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in"
             style={{ animationDelay: '600ms' }}
           >
-            <button onClick={scrollToContact} className="btn-primary bg-white text-foreground hover:bg-white/90">
-              <Calendar className="w-5 h-5" />
+            <button onClick={handleCall} className="btn-primary bg-white text-foreground hover:bg-white/90">
+              <Phone className="w-5 h-5" />
               {t.hero.cta}
             </button>
             <button onClick={handleWhatsApp} className="btn-secondary border-white text-white hover:bg-white hover:text-foreground">

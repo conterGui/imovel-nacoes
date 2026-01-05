@@ -13,6 +13,12 @@ import gallery5 from '@/assets/gallery-5.jpg';
 import gallery6 from '@/assets/gallery-6.jpg';
 import beforeLiving from '@/assets/before-living.jpg';
 import afterLiving from '@/assets/after-living.jpg';
+import beforeKitchen from '@/assets/before-kitchen.jpg';
+import afterKitchen from '@/assets/after-kitchen.jpg';
+import beforeBedroom from '@/assets/before-bedroom.jpg';
+import afterBedroom from '@/assets/after-bedroom.jpg';
+import beforeBathroom from '@/assets/before-bathroom.jpg';
+import afterBathroom from '@/assets/after-bathroom.jpg';
 
 export const propertyConfig = {
   // Informações básicas
@@ -27,15 +33,15 @@ export const propertyConfig = {
   phone: "+55 11 99999-9999",
   email: "contato@exemplo.com",
 
-  // Localização
-  address: "Rua das Palmeiras, 1234 - Jardins, São Paulo",
-  mapCenter: { lat: -23.5505, lng: -46.6333 },
+  // Localização - Loures Shopping, Loures, Lisboa, Portugal
+  address: "Av. Liberdade 41, 2674-501 Loures, Portugal",
+  mapCenter: { lat: 38.8308, lng: -9.1705 },
   
   // Pontos de interesse (para o mapa)
   pointsOfInterest: [
-    { name: "Metrô", distance: "5 min" },
-    { name: "Parque", distance: "200m" },
-    { name: "Shopping", distance: "10 min" },
+    { name: "Loures Shopping", distance: "0 min" },
+    { name: "Metro Odivelas", distance: "10 min" },
+    { name: "Hospital Beatriz Ângelo", distance: "5 min" },
   ],
 
   // Seções ativas (true = visível, false = oculto)
@@ -60,13 +66,27 @@ export const propertyConfig = {
     gallery6,
   ],
 
-  // Before/After comparisons
-  // Cada item representa um ambiente diferente
+  // Before/After comparisons - Um para cada cômodo
   beforeAfter: [
     {
       label: "Sala de Estar",
       before: beforeLiving,
       after: afterLiving,
+    },
+    {
+      label: "Cozinha",
+      before: beforeKitchen,
+      after: afterKitchen,
+    },
+    {
+      label: "Quarto Principal",
+      before: beforeBedroom,
+      after: afterBedroom,
+    },
+    {
+      label: "Casa de Banho",
+      before: beforeBathroom,
+      after: afterBathroom,
     },
   ],
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { propertyConfig } from '@/config/property';
-import { MessageCircle, Phone, Calendar, Send } from 'lucide-react';
+import { MessageCircle, Phone, Send } from 'lucide-react';
 import { toast } from 'sonner';
 
 const ContactSection: React.FC = () => {
@@ -64,30 +64,30 @@ const ContactSection: React.FC = () => {
             </p>
 
             <div className="space-y-4">
-              {/* Primary CTA - WhatsApp */}
+              {/* Primary CTA - Phone Call for scheduling */}
               <button 
-                onClick={handleWhatsApp}
-                className="w-full flex items-center justify-center gap-3 px-8 py-5 bg-green-600 text-white font-medium tracking-wide transition-all duration-300 hover:bg-green-700"
+                onClick={handleCall}
+                className="w-full flex items-center justify-center gap-3 px-8 py-5 bg-background text-foreground font-medium tracking-wide transition-all duration-300 hover:bg-background/90 rounded-lg"
               >
-                <MessageCircle className="w-5 h-5" />
-                {t.contact.whatsapp}
+                <Phone className="w-5 h-5" />
+                {t.contact.schedule}
               </button>
 
               {/* Secondary CTAs */}
               <div className="grid grid-cols-2 gap-4">
                 <button 
+                  onClick={handleWhatsApp}
+                  className="flex items-center justify-center gap-2 px-6 py-4 bg-green-600 text-white font-medium transition-all duration-300 hover:bg-green-700 rounded-lg"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  {t.contact.whatsapp}
+                </button>
+                <button 
                   onClick={handleCall}
-                  className="flex items-center justify-center gap-2 px-6 py-4 border border-background/30 text-background font-medium transition-all duration-300 hover:bg-background hover:text-foreground"
+                  className="flex items-center justify-center gap-2 px-6 py-4 border border-background/30 text-background font-medium transition-all duration-300 hover:bg-background hover:text-foreground rounded-lg"
                 >
                   <Phone className="w-5 h-5" />
                   {t.contact.call}
-                </button>
-                <button 
-                  onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="flex items-center justify-center gap-2 px-6 py-4 border border-background/30 text-background font-medium transition-all duration-300 hover:bg-background hover:text-foreground"
-                >
-                  <Calendar className="w-5 h-5" />
-                  {t.contact.schedule}
                 </button>
               </div>
             </div>
@@ -111,7 +111,7 @@ const ContactSection: React.FC = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-transparent border border-background/30 text-background placeholder:text-background/40 focus:outline-none focus:border-background transition-colors"
+                  className="w-full px-4 py-3 bg-transparent border border-background/30 text-background placeholder:text-background/40 focus:outline-none focus:border-background transition-colors rounded-lg"
                 />
               </div>
 
@@ -126,7 +126,7 @@ const ContactSection: React.FC = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-transparent border border-background/30 text-background placeholder:text-background/40 focus:outline-none focus:border-background transition-colors"
+                    className="w-full px-4 py-3 bg-transparent border border-background/30 text-background placeholder:text-background/40 focus:outline-none focus:border-background transition-colors rounded-lg"
                   />
                 </div>
                 <div>
@@ -138,7 +138,7 @@ const ContactSection: React.FC = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-transparent border border-background/30 text-background placeholder:text-background/40 focus:outline-none focus:border-background transition-colors"
+                    className="w-full px-4 py-3 bg-transparent border border-background/30 text-background placeholder:text-background/40 focus:outline-none focus:border-background transition-colors rounded-lg"
                   />
                 </div>
               </div>
@@ -152,14 +152,14 @@ const ContactSection: React.FC = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  className="w-full px-4 py-3 bg-transparent border border-background/30 text-background placeholder:text-background/40 focus:outline-none focus:border-background transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-transparent border border-background/30 text-background placeholder:text-background/40 focus:outline-none focus:border-background transition-colors resize-none rounded-lg"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full flex items-center justify-center gap-3 px-8 py-4 bg-background text-foreground font-medium tracking-wide transition-all duration-300 hover:bg-background/90 disabled:opacity-50"
+                className="w-full flex items-center justify-center gap-3 px-8 py-4 bg-background text-foreground font-medium tracking-wide transition-all duration-300 hover:bg-background/90 disabled:opacity-50 rounded-lg"
               >
                 <Send className="w-5 h-5" />
                 {isSubmitting ? '...' : t.contact.form.submit}

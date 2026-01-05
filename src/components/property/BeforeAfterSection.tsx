@@ -2,6 +2,7 @@ import React, { useState, useRef, useCallback } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { propertyConfig } from '@/config/property';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface ComparisonSliderProps {
   before: string;
@@ -55,7 +56,7 @@ const ComparisonSlider: React.FC<ComparisonSliderProps> = ({
       
       <div
         ref={containerRef}
-        className="relative aspect-video cursor-ew-resize select-none overflow-hidden"
+        className="relative aspect-video cursor-ew-resize select-none overflow-hidden rounded-lg"
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
@@ -101,10 +102,10 @@ const ComparisonSlider: React.FC<ComparisonSliderProps> = ({
         </div>
 
         {/* Labels */}
-        <div className="absolute bottom-4 left-4 bg-black/60 text-white text-sm px-3 py-1.5 backdrop-blur-sm">
+        <div className="absolute bottom-4 left-4 bg-black/60 text-white text-sm px-3 py-1.5 backdrop-blur-sm rounded">
           {beforeLabel}
         </div>
-        <div className="absolute bottom-4 right-4 bg-black/60 text-white text-sm px-3 py-1.5 backdrop-blur-sm">
+        <div className="absolute bottom-4 right-4 bg-black/60 text-white text-sm px-3 py-1.5 backdrop-blur-sm rounded">
           {afterLabel}
         </div>
       </div>
@@ -116,8 +117,17 @@ const BeforeAfterSection: React.FC = () => {
   const { t } = useLanguage();
   const { ref, isVisible } = useScrollAnimation();
   const comparisons = propertyConfig.beforeAfter;
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   if (!comparisons || comparisons.length === 0) return null;
+
+  const goToPrevious = () => {
+    setCurrentIndex(prev => prev === 0 ? comparisons.length - 1 : prev - 1);
+  };
+
+  const goToNext = () => {
+    setCurrentIndex(prev => prev === comparisons.length - 1 ? 0 : prev + 1);
+  };
 
   return (
     <section 
@@ -134,24 +144,83 @@ const BeforeAfterSection: React.FC = () => {
           {t.beforeAfter.title}
         </h2>
 
-        <div className={`grid gap-12 ${comparisons.length > 1 ? 'md:grid-cols-2' : ''}`}>
-          {comparisons.map((comparison, index) => (
-            <div
-              key={index}
-              className={`transition-all duration-700 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-              style={{ transitionDelay: `${index * 200}ms` }}
-            >
-              <ComparisonSlider
-                before={comparison.before}
-                after={comparison.after}
-                label={comparison.label}
-                beforeLabel={t.beforeAfter.before}
-                afterLabel={t.beforeAfter.after}
-              />
+        {/* Carousel */}
+        <div 
+          className={`relative transition-all duration-700 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
+          {/* Main comparison slider */}
+          <div className="max-w-4xl mx-auto">
+            <ComparisonSlider
+              before={comparisons[currentIndex].before}
+              after={comparisons[currentIndex].after}
+              label={comparisons[currentIndex].label}
+              beforeLabel={t.beforeAfter.before}
+              afterLabel={t.beforeAfter.after}
+            />
+          </div>
+
+          {/* Navigation arrows */}
+          {comparisons.length > 1 && (
+            <>
+              <button
+                onClick={goToPrevious}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:translate-x-0 w-12 h-12 bg-background/90 hover:bg-background rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110"
+                aria-label="Anterior"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <button
+                onClick={goToNext}
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-0 w-12 h-12 bg-background/90 hover:bg-background rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110"
+                aria-label="Próximo"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </>
+          )}
+
+          {/* Dots indicator */}
+          {comparisons.length > 1 && (
+            <div className="flex justify-center gap-2 mt-8">
+              {comparisons.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    index === currentIndex 
+                      ? 'bg-foreground w-6' 
+                      : 'bg-foreground/30 hover:bg-foreground/50'
+                  }`}
+                  aria-label={`Ir para ${comparisons[index].label}`}
+                />
+              ))}
             </div>
-          ))}
+          )}
+
+          {/* Thumbnails preview */}
+          {comparisons.length > 1 && (
+            <div className="flex justify-center gap-3 mt-6 overflow-x-auto pb-2">
+              {comparisons.map((comparison, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`flex-shrink-0 transition-all duration-300 ${
+                    index === currentIndex 
+                      ? 'ring-2 ring-foreground ring-offset-2' 
+                      : 'opacity-60 hover:opacity-100'
+                  }`}
+                >
+                  <img
+                    src={comparison.after}
+                    alt={comparison.label}
+                    className="w-20 h-14 md:w-24 md:h-16 object-cover rounded-lg"
+                  />
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>

@@ -25,18 +25,31 @@ const GallerySection: React.FC = () => {
     }
   };
 
-  // Dynamic grid layout based on image count
-  const getGridClass = () => {
-    const count = images.length;
-    if (count === 1) return 'grid-cols-1';
-    if (count === 2) return 'grid-cols-1 md:grid-cols-2';
-    if (count === 3) return 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3';
-    if (count === 4) return 'grid-cols-2';
-    return 'grid-cols-2 md:grid-cols-3';
+  // Modern masonry-style layout with varied sizes
+  const getImageStyle = (index: number) => {
+    // Create visual variety with different sizes
+    const patterns = [
+      'col-span-2 row-span-2', // Large featured
+      'col-span-1 row-span-1', // Small square
+      'col-span-1 row-span-2', // Tall
+      'col-span-1 row-span-1', // Small square
+      'col-span-2 row-span-1', // Wide
+      'col-span-1 row-span-1', // Small square
+    ];
+    return patterns[index % patterns.length];
   };
 
-  // Featured image (first one) gets special treatment for 5+ images
-  const hasFeatured = images.length >= 5;
+  const getAspectRatio = (index: number) => {
+    const patterns = [
+      'aspect-square',     // Large featured - square
+      'aspect-square',     // Small square
+      'aspect-[3/4]',      // Tall
+      'aspect-square',     // Small square
+      'aspect-video',      // Wide
+      'aspect-square',     // Small square
+    ];
+    return patterns[index % patterns.length];
+  };
 
   return (
     <section 
@@ -53,64 +66,25 @@ const GallerySection: React.FC = () => {
           {t.gallery.title}
         </h2>
 
-        {hasFeatured ? (
-          // Layout with featured image
-          <div className="space-y-4">
-            {/* Featured image */}
-            <div 
-              className={`image-zoom cursor-pointer transition-all duration-700 ${
+        {/* Modern masonry grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-[200px] md:auto-rows-[240px]">
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className={`${getImageStyle(index)} image-zoom cursor-pointer transition-all duration-700 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
-              onClick={() => openLightbox(0)}
+              style={{ transitionDelay: `${index * 100}ms` }}
+              onClick={() => openLightbox(index)}
             >
               <img
-                src={images[0]}
-                alt="Featured"
-                className="w-full aspect-hero object-cover"
+                src={image}
+                alt={`Gallery ${index + 1}`}
+                className="w-full h-full object-cover rounded-lg"
               />
             </div>
-
-            {/* Grid of remaining images */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {images.slice(1).map((image, index) => (
-                <div
-                  key={index}
-                  className={`image-zoom cursor-pointer transition-all duration-700 ${
-                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                  }`}
-                  style={{ transitionDelay: `${(index + 1) * 100}ms` }}
-                  onClick={() => openLightbox(index + 1)}
-                >
-                  <img
-                    src={image}
-                    alt={`Gallery ${index + 2}`}
-                    className="w-full aspect-square object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        ) : (
-          // Simple grid for fewer images
-          <div className={`grid ${getGridClass()} gap-4`}>
-            {images.map((image, index) => (
-              <div
-                key={index}
-                className={`image-zoom cursor-pointer transition-all duration-700 ${
-                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
-                style={{ transitionDelay: `${index * 100}ms` }}
-                onClick={() => openLightbox(index)}
-              >
-                <img
-                  src={image}
-                  alt={`Gallery ${index + 1}`}
-                  className="w-full aspect-square object-cover"
-                />
-              </div>
-            ))}
-          </div>
-        )}
+          ))}
+        </div>
       </div>
 
       {/* Lightbox */}
@@ -143,7 +117,7 @@ const GallerySection: React.FC = () => {
           <img
             src={images[lightboxIndex]}
             alt={`Gallery ${lightboxIndex + 1}`}
-            className="max-w-[90vw] max-h-[90vh] object-contain"
+            className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg"
             onClick={(e) => e.stopPropagation()}
           />
 
