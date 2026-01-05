@@ -24,7 +24,6 @@
  */
 
 import React from 'react';
-import { LanguageProvider } from '@/contexts/LanguageContext';
 import { propertyConfig } from '@/config/property';
 
 // Componentes do site
@@ -44,30 +43,28 @@ const Index: React.FC = () => {
   const { sections } = propertyConfig;
 
   return (
-    <LanguageProvider>
-      <div className="min-h-screen bg-background">
-        {/* Navegação fixa */}
-        <Navigation />
+    <div className="min-h-screen bg-background">
+      {/* Navegação fixa */}
+      <Navigation />
 
-        {/* Seções do site - comente/descomente para ativar/desativar */}
-        <main>
-          {sections.hero && <HeroSection />}
-          {sections.about && <AboutSection />}
-          {sections.details && <DetailsSection />}
-          {sections.gallery && <GallerySection />}
-          {sections.beforeAfter && <BeforeAfterSection />}
-          {sections.video && <VideoSection />}
-          {sections.location && <LocationSection />}
-          {sections.contact && <ContactSection />}
-        </main>
+      {/* Seções do site - comente/descomente para ativar/desativar */}
+      <main>
+        {sections.hero && <HeroSection />}
+        {sections.about && <AboutSection />}
+        {sections.details && <DetailsSection />}
+        {sections.gallery && <GallerySection />}
+        {sections.beforeAfter && <BeforeAfterSection />}
+        {sections.video && <VideoSection />}
+        {sections.location && <LocationSection />}
+        {sections.contact && <ContactSection />}
+      </main>
 
-        {/* Rodapé */}
-        <Footer />
+      {/* Rodapé */}
+      <Footer />
 
-        {/* Botão flutuante do WhatsApp */}
-        <WhatsAppFloat />
-      </div>
-    </LanguageProvider>
+      {/* Botão flutuante do WhatsApp */}
+      <WhatsAppFloat />
+    </div>
   );
 };
 
