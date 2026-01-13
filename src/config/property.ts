@@ -4,42 +4,27 @@
 // ============================================
 
 // Imagens importadas como ES6 modules
-import heroImage from '@/assets/hero-property.jpg';
-import gallery1 from '@/assets/gallery-1.jpg';
-import gallery2 from '@/assets/gallery-2.jpg';
-import gallery3 from '@/assets/gallery-3.jpg';
-import gallery4 from '@/assets/gallery-4.jpg';
-import gallery5 from '@/assets/gallery-5.jpg';
-import gallery6 from '@/assets/gallery-6.jpg';
-import gallery7 from '@/assets/gallery-7.jpg';
-import gallery8 from '@/assets/gallery-8.jpg';
 import agentPhoto from '@/assets/agent-photo.jpg';
-import beforeLiving from '@/assets/before-living.jpg';
-import afterLiving from '@/assets/after-living.jpg';
-import beforeKitchen from '@/assets/before-kitchen.jpg';
-import afterKitchen from '@/assets/after-kitchen.jpg';
-import beforeBedroom from '@/assets/before-bedroom.jpg';
-import afterBedroom from '@/assets/after-bedroom.jpg';
-import beforeBathroom from '@/assets/before-bathroom.jpg';
-import afterBathroom from '@/assets/after-bathroom.jpg';
+import { galleryImages } from "@/assets/propertyImages";
+import { propertyImages } from '@/assets/propertyImages';
 
 export const propertyConfig = {
   // Informações básicas
-  price: "R$ 2.850.000",
-  area: 450,
-  totalArea: 550,
+  price: "587 000 €",
+  area: 200,
+  totalArea: 277,
   bedrooms: 4,
-  bathrooms: 5,
-  parking: 3,
-  yearBuilt: 2020,
-  lotSize: 600,
-  condition: "Renovado",
-  energyRating: "A+",
+  bathrooms: 3,
+  parking: 4,
+  yearBuilt: 2003,
+  lotSize: 917,
+  condition: "Usado",
+  energyRating: "D",
 
   // Contato
-  whatsapp: "5511999999999", // Número com código do país, sem símbolos
-  phone: "+55 11 99999-9999",
-  email: "contato@exemplo.com",
+  whatsapp: "351965039757", // Número com código do país, sem símbolos
+  phone: "+351 965039757",
+  email: "sandrasemedo@century21.pt",
 
   // Localização - Loures Shopping, Loures, Lisboa, Portugal
   address: "Av. Liberdade 41, 2674-501 Loures, Portugal",
@@ -55,8 +40,8 @@ export const propertyConfig = {
   // Agente imobiliário
   seller:{
     photo: agentPhoto, // URL ou caminho para a foto do agente
-    name: "João Silva",
-    agency: "Imobiliária Exemplo",
+    name: "Sandra Semedo",
+    agency: "Century 21",
   },
 
 
@@ -73,19 +58,10 @@ export const propertyConfig = {
   },
 
   // Galeria de imagens
-  gallery: [
-    gallery1,
-    gallery2,
-    gallery3,
-    gallery4,
-    gallery5,
-    gallery6,
-    gallery7,
-    gallery8,
-  ],
+  gallery: propertyImages.gallery,
 
   // Before/After comparisons - Um para cada cômodo
-  beforeAfter: [
+  /*beforeAfter: [
     {
       label: "livingRoom",
       before: beforeLiving,
@@ -106,10 +82,10 @@ export const propertyConfig = {
       before: beforeBathroom,
       after: afterBathroom,
     },
-  ],
+  ],*/
 
   // Vídeos
   heroVideo: "", // URL do vídeo do hero (deixe vazio para usar imagem)
-  heroImage: heroImage, // Imagem de fallback/mobile
+  heroImage: propertyImages.hero, // Imagem de fallback/mobile
   tourVideo: "", // URL do vídeo do tour virtual
 };

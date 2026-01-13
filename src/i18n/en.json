@@ -7,15 +7,16 @@
     "contact": "Contact"
   },
 "hero": {
-    "title": "Contemporary Residence",
-    "subtitle": "A unique architectural masterpiece in a prime location",
+    "title": "House in Mafra",
+    "subtitle": "4 Bedrooms • 3 Bathrooms • 200 sqm Area",
     "cta": "Call to Schedule",
     "ctaSecondary": "Chat on WhatsApp"
   },
   "about": {
     "title": "About the Property",
-    "description": "This exclusive residence combines contemporary architecture with high-end finishes. Designed to offer absolute comfort and integration with nature.",
-    "longDescription": "Every detail has been carefully considered to provide an exceptional living experience. Spacious living areas, abundant natural light, and noble materials that convey sophistication and durability. The intelligent floor plan allows multiple configurations, adapting to your lifestyle."
+    "description": "Located in Chança, in Sobral da Abelheira.\nThis charming 4-room house with a gross construction area of 175 m2 is set on a substantial plot of 971 m2.",
+    "longDescription": "4-bedroom house in Mafra with 175 m² of construction on a 971 m² plot.\nHighlights include a 28 m² living room with fireplace, 16.5 m² kitchen with pantry, 14.5 m² suite, and bedrooms with built-in wardrobes.\nThe entire house has central heating, attic potential, and is equipped with a heat pump.\n\nExterior features a 10x4 m saltwater swimming pool, 70 m² garage, T1 annex with AC, kitchenette, and full bathroom, barbecue, traditional oven, and dog kennels.\nThe property also includes fruit trees and decorative plants.\n\nLocated in a quiet area surrounded by nature, close to the beaches of Ericeira, with easy access to Lisbon and Mafra.\nBuilt in 2003 with high-quality materials, it offers stunning views over Tapada de Mafra and the pleasure of countryside living while remaining close to the city."
+
   },
   "details": {
     "title": "Features",
@@ -54,12 +55,14 @@
     "highlights": {
       "title": "Points of Interest",
       "items": [
-        "5 min from subway",
-        "Park 200m away",
-        "Renowned schools",
-        "Shopping center nearby"
-      ]
-    }
+      "20 minutes from the A8 motorway",
+      "44 minutes from Lisbon by car (A21, A8)",
+      "16 minutes from Ericeira",
+      "8 minutes from Tapada de Mafra",
+      "16 minutes from the Convent of Mafra"
+    ]
+    },
+    "seeMap": "See on Google Maps"
   },
 "contact": {
     "title": "Interested?",

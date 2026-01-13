@@ -70,7 +70,7 @@ const LocationSection: React.FC = () => {
 
             <button onClick={openMaps} className="btn-outline">
               <Navigation className="w-5 h-5" />
-              Ver no Google Maps
+              {t.location.seeMap}
             </button>
           </div>
 

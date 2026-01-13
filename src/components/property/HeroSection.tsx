@@ -31,7 +31,7 @@ const HeroSection: React.FC = () => {
   const showVideo = propertyConfig.heroVideo && !isMobile;
 
   return (
-    <section id="hero" className="relative h-screen w-full overflow-hidden">
+    <section id="hero" className="relative h-screen overflow-hidden">
       {/* Background Video/Image */}
       {showVideo ? (
         <video
@@ -54,8 +54,8 @@ const HeroSection: React.FC = () => {
       <div className="absolute inset-0 bg-black" style={{ opacity: 0.6 }} />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col justify-end h-full pb-20 md:pb-32">
-        <div className="container-wide">
+      <div className="relative z-10 flex flex-col justify-end h-full pb-20 md:pb-32 items-start px-6 md:px-12">
+        <div>
           {/* Title */}
           <h1
             className="heading-display text-white mb-6 opacity-0 animate-fade-in"

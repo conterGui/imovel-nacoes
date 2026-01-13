@@ -30,7 +30,7 @@ const AboutSection: React.FC = () => {
 
             <div className="w-full h-px bg-primary/30" />
 
-            <p className="body-base text-muted-foreground">
+            <p className="body-base text-muted-foreground whitespace-pre-line">
               {t.about.longDescription}
             </p>
           </div>

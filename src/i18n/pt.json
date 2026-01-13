@@ -7,15 +7,17 @@
     "contact": "Contacto"
   },
 "hero": {
-    "title": "Residência Contemporânea",
-    "subtitle": "Uma obra arquitetónica única em localização privilegiada",
+    "title": "Moradia em Mafra",
+    "subtitle": "4 Quartos • 3 Casas de Banho • 200 m² Úteis",
     "cta": "Ligar para Agendar",
     "ctaSecondary": "Falar no WhatsApp"
   },
+  
+
   "about": {
     "title": "Sobre o Imóvel",
-    "description": "Esta residência exclusiva combina arquitetura contemporânea com acabamentos de alto padrão. Projetada para oferecer conforto absoluto e integração com a natureza.",
-    "longDescription": "Cada detalhe foi pensado para proporcionar uma experiência de moradia excepcional. Amplos espaços de convivência, iluminação natural abundante e materiais nobres que conferem sofisticação e durabilidade. A planta inteligente permite múltiplas configurações, adaptando-se ao seu estilo de vida."
+    "description": "Localizada na Chança, no Sobral da Abelheira.\nEsta agradável moradia de 4 assoalhadas com uma área bruta de construção de 175 m2, está inserida num substantivo lote de terreno de 971 m2.",
+"longDescription": "Moradia de 4 quartos em Mafra com 175 m² de construção, inserida num terreno de 971 m².\nDestaque para a sala de 28 m² com lareira, cozinha de 16,5 m² com despensa, suite de 14,5 m² e quartos com roupeiros.\nToda a casa com aquecimento central, possibilidade de aproveitamento de sótão e equipada com bomba de calor.\n\nExterior com piscina de água salgada (10x4 m), garagem de 70 m², anexo T1 com AC, kitchenette e casa de banho completa, churrasqueira, forno tradicional e casotas para cães.\nTerreno com árvores de fruto e plantas decorativas.\n\nLocalizada numa zona tranquila, rodeada de natureza, perto das praias da Ericeira e com fácil acesso a Lisboa e Mafra.\nConstruída em 2003 com materiais de qualidade, oferece deslumbrante vista sobre a Tapada de Mafra e a experiência de viver no campo com proximidade à cidade."
   },
   "details": {
     "title": "Características",
@@ -54,12 +56,14 @@
     "highlights": {
       "title": "Pontos de Interesse",
       "items": [
-        "5 min do metro",
-        "Parque a 200m",
-        "Escolas renomadas",
-        "Centro comercial próximo"
+        "20 minutos da A8",
+        "44 minutos de Lisboa por carro (A21, A8)",
+        "16 minutos da Ericeira",
+        "8 minutos da Tapada de Mafra",
+        "16 minutos do Convento de Mafra"
       ]
-    }
+    },
+    "seeMap": "Ver no Google Maps"
   },
 "contact": {
     "title": "Interessado?",
