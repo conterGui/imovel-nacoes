@@ -18,8 +18,7 @@ const customIcon = new L.Icon({
 const LocationSection: React.FC = () => {
   const { t } = useLanguage();
   const { ref, isVisible } = useScrollAnimation();
-  const position: LatLngExpression = [38.980889, -9.30825];
-
+  const position: LatLngExpression = [38.779944, -9.095222];
   const openMaps = () => {
     const { lat, lng } = propertyConfig.mapCenter;
     window.open(`https://www.google.com/maps?q=${lat},${lng}`, "_blank");

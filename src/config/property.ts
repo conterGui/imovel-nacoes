@@ -10,16 +10,16 @@ import { propertyImages, beforeAfterImages} from '@/assets/propertyImages';
 
 export const propertyConfig = {
   // Informações básicas
-  price: "587 000 €",
-  area: 200,
-  totalArea: 277,
-  bedrooms: 4,
-  bathrooms: 3,
-  parking: 4,
-  yearBuilt: 2003,
-  lotSize: 917,
-  condition: "Usado",
-  energyRating: "D",
+  price: "850 000 €",
+  area: 125.7,
+  totalArea: 172,
+  bedrooms: 3,
+  bathrooms: 2,
+  parking: 2,
+  yearBuilt: 1998,
+  //lotSize: 917,
+  condition: "Renovado",
+  energyRating: "C",
 
   // Contato
   whatsapp: "351965039757", // Número com código do país, sem símbolos
@@ -27,8 +27,9 @@ export const propertyConfig = {
   email: "sandrasemedo@century21.pt",
 
   // Localização - Loures Shopping, Loures, Lisboa, Portugal
-  address: "Estr. da Chança 6, 2640-601 Sobral da Abelheira",
-  mapCenter: { lat: 38.980889, lng: -9.30825 },
+  address: "Alameda dos Oceanos 100, 1990-238 Lisboa",
+  mapCenter: { lat: 38.779944, lng: -9.095222 },
+
 
   
   // Pontos de interesse (para o mapa)
