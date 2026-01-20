@@ -18,11 +18,11 @@ const ContactSection: React.FC = () => {
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent(
-      "Olá! Tenho interesse no imóvel e gostaria de mais informações."
+      "Olá! Tenho interesse no imóvel e gostaria de mais informações.",
     );
     window.open(
       `https://wa.me/${propertyConfig.whatsapp}?text=${message}`,
-      "_blank"
+      "_blank",
     );
   };
 
@@ -43,7 +43,7 @@ const ContactSection: React.FC = () => {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -119,16 +119,6 @@ const ContactSection: React.FC = () => {
                 <MessageCircle className="w-5 h-5 relative z-10 transition-transform group-hover:scale-110" />
                 <span className="relative z-10">{t.contact.whatsapp}</span>
               </button>
-
-              <a
-                href="/brochure.pdf"
-                download
-                className="group relative flex items-center justify-center gap-3 px-9 py-5 border-2 border-primary text-primary font-semibold uppercase text-sm tracking-wider transition-all duration-300 hover:bg-primary hover:text-charcoal hover:scale-105 active:scale-100 rounded overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-primary/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                <FileText className="w-5 h-5 relative z-10 transition-transform group-hover:rotate-12" />
-                <span className="relative z-10">{t.contact.brochure}</span>
-              </a>
             </div>
 
             {/* Optional: Add contact info */}

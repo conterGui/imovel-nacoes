@@ -8,7 +8,7 @@
   },
 "hero": {
     "title": "T3 no Parque das Nações",
-    "subtitle": "3 Quartos • 2 Casas de Banho • Área de 125.7 m² ",
+    "subtitle": "3 Quartos • 2 Casas de Banho • Área de 172 m² ",
     "cta": "Ligar para Agendar",
     "ctaSecondary": "Falar no WhatsApp"
   },
@@ -56,15 +56,13 @@
   },
   "location": {
     "title": "Localização",
-    "description": "Situada em uma das zonas mais valorizadas da cidade, com fácil acesso a serviços, comércio e lazer.",
+    "description": "Situada em uma das zonas mais valorizadas de Lisboa, com fácil acesso a serviços, comércio e lazer.",
     "highlights": {
       "title": "Pontos de Interesse",
       "items": [
-        "15 minutos do Parque das Nações",
-        "22 minutos do Oceanário de Lisboa",
-        "20 minutos do Centro Comercial Vasco da Gama",
-        "18 minutos da Estação do Oriente",
-        "9 minutos do Jardim do Cabeço de Montachique"
+        "12 minutos a pé do Oceanário de Lisboa",
+        "18 minutos a pé do Centro Comercial Vasco da Gama",
+        "21 minutos a pé da Estação do Oriente"
       ]
     },
     "seeMap": "Ver no Google Maps"
